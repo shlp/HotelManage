@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.hotel.dao.AccountScoreDao">
+
+	<!-- 获取单个换房信息 -->
+	<select id="find" parameterType="Long" resultType="com.ssm.hotel.entity.AccountScore">
+		select * from account_score where id = #{id}
+	</select>
+	<!-- 根据acountId获取accountScore信息 -->
+	<select id="findByAccountId" parameterType="Long" resultType="com.ssm.hotel.entity.AccountScore">
+		select * from account_score where accountId = #{accountId}
+	</select>
+	<!-- 编辑操作 -->
+	<update id="edit" parameterType="com.ssm.hotel.entity.AccountScore">
+		update account_score set score = #{score} where id = #{id}
+	</update>
+
+</mapper>
